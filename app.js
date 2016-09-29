@@ -5,8 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Register REST Route to the directory
 var routes = require('./routes/index');
 var mysqlquery = require('./routes/mysqlquery');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -22,8 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Pointting to the route
 app.use('/', routes);
 app.use('/mysqlquery', mysqlquery);
+app.use('/user', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
