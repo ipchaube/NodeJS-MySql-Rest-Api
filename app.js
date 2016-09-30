@@ -23,6 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Include the folder name which you want to access from you html pages
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 //Pointting to the route
