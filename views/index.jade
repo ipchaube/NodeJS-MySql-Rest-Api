@@ -1,5 +1,16 @@
-extends layout
+doctype html
+html
+  head
+    title= title
 
-block content
-  h1= title
-  p Welcome to #{title}
+
+    block styles  // this will render in the <head>
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+
+    block headscripts  // this will also render in the <head>
+      script(src='/angular/angular.min.js')
+      script(src='/bootstrap/dist/js/bootstrap.min.js')
+  body
+    h1= title
+      p Welcome to #{title}

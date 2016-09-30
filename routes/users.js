@@ -6,7 +6,7 @@ var _sqlconns = require("./include/mysqlconn");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   "use strict";
-    var _dataquery='SELECT * FROM  `1006_travelerdata` ';
+    var _dataquery='SELECT * FROM  `wp_users` ';
     var connparms=_sqlconns.sqlConnParms();
     var con = mysql.createConnection(connparms);
     con.connect(function (err) {
